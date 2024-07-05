@@ -34,9 +34,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest
-        sudo apt-get update && apt-get install -y \
-        chromium \
-        chromium-driver
+    
+    - name: Install chromium
+      run: |
+        sudo apt-get update && apt-get install -y chromium chromium-driver
 
     - name: Run tests
       run: |
