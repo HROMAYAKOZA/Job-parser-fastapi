@@ -36,9 +36,7 @@ jobs:
         pip install pytest
         sudo apt-get update && apt-get install -y \
         chromium \
-        chromium-driver \
-        && apt-get clean \
-        && rm -rf /var/lib/apt/lists/*
+        chromium-driver
 
     - name: Run tests
       run: |
