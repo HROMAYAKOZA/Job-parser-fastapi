@@ -53,5 +53,5 @@ jobs:
     - name: Run tests
       env:
         # The hostname used to communicate with the PostgreSQL service container
-        POSTGRES_HOST: postgres
+        POSTGRES_HOST: localhost
       run: pytest app_test.py -v
