@@ -1,5 +1,6 @@
 from typing import AsyncGenerator
 from sqlalchemy.orm import DeclarativeBase, declared_attr
+from os import getenv
 
 from sqlalchemy.ext.asyncio import (
     create_async_engine,
@@ -38,9 +39,9 @@ class DatabaseHelper:
         async with self.session_factory() as session:
             yield session
 
-
+POSTGRES_HOST = getenv("POSTGRES_HOST", "database")
 db_helper = DatabaseHelper(
-    url=str("postgresql+asyncpg://postgres:1234@database/jobParser"), # localhost вместо database без докера
+    url=str(f"postgresql+asyncpg://postgres:1234@{POSTGRES_HOST}/jobParser"), # localhost вместо database без докера
     # echo=True,
     echo=False,
 )
