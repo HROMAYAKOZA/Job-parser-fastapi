@@ -1,0 +1,40 @@
+services:
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "jobParser"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "1234"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    # networks:
+    #   - jobParserNetwork
+
+  backend:
+    build:
+      context: .
+      dockerfile: back.Dockerfile
+    depends_on:
+      - database
+    ports:
+      - "8000:8000"
+    # networks:
+    #   - jobParserNetwork
+  
+  frontend:
+    build:
+      context: .
+      dockerfile: front.Dockerfile
+    ports:
+      - "3000:3000"
+    # networks:
+    #   - jobParserNetwork
+
+volumes:
+  postgres_data:
+
+# networks:
+#   jobParserNetwork:
+#     external: true

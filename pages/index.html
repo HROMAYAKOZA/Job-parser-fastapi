@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Parser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            width: 100%;
+        }
+        .tile-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .tile {
+            background-color: #f0f0f0;
+            padding: 20px;
+            width: 120px;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .tile:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Job Parser</h1>
+    </div>
+    <div class="tile-container">
+        <a href="/jobs.html" class="tile">Вакансии</a>
+        <a href="/resums.html" class="tile">Резюме</a>
+        <a href="/statistics.html" class="tile">Статистика</a>
+    </div>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

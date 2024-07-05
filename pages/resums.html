@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .home-link {
+            font-size: 54px;
+            margin: 20px 0;
+        }
+        .loading{
+            color: #ff0000
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><div class="home-link">
+        <a href="/">Главная</a>
+    </div></div>
+    <div class="container">
+        <h1>Поиск по фильтрам</h1>
+        <input type="text" id="max_salary" placeholder="Максимальная зарплата, руб">
+        <input type="text" id="experience" placeholder="Минимальный опыт работы, лет">
+        <select title="selection" id="status">
+            <option value="0">Статус резюме</option>
+            <option value="0">Любой</option>
+            <option value="1">Активно(Активно ищет, рассматривает предложения, решает)</option>
+        </select>
+        <button onclick="fetchItems()">Поиск</button>
+        <table id="resumTable">
+            <thead>
+                <tr>
+                    <th>Должность</th>
+                    <th>Макс. зарплата</th>
+                    <th>Опыт работы</th>
+                    <th>Статус</th>
+                    <th>Последнее место работы</th>
+                </tr>
+                <tr class="loading">
+                    <th>Загрузка...</th>
+                    <th>Загрузка...</th>
+                    <th>Загрузка...</th>
+                    <th>Загрузка...</th>
+                    <th>Загрузка...</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="resumList"></div>
+    </div>
+    <script src="script_resum.js"></script>
+</body>
+</html>

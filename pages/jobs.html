@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .home-link {
+            font-size: 54px;
+            margin: 20px 0;
+        }
+        .loading{
+            color: #ff0000
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><div class="home-link">
+        <a href="/">Главная</a>
+    </div></div>
+    <div class="container">
+        <h1>Поиск по фильтрам</h1>
+        <input type="text" id="salary" placeholder="Минимальная зарплата, руб">
+        <input type="text" id="city" placeholder="Город">
+        <select title="selection" id="experience">
+            <option value="0">Опыт работы</option>
+            <option value="0">Нет опыта</option>
+            <option value="1">От 1 года до 3 лет</option>
+            <option value="3">От 3 до 6 лет</option>
+            <option value="6">Более 6 лет</option>
+        </select>
+        <label>
+            <input type="checkbox" id="remote"> Дистанционно
+            <input type="checkbox" id="req_resume"> Без резюме
+        </label>
+        <button onclick="fetchItems()">Поиск</button>
+        <table id="jobTable">
+            <thead>
+                <tr>
+                    <th>Должность</th>
+                    <th>Мин. зарплата</th>
+                    <th>Опыт работы</th>
+                    <th>Город</th>
+                    <th>Удалённо</th>
+                    <th>Необходимо резюме</th>
+                </tr>
+                <tr class="loading">
+                    <th>Загрузка...</th>
+                    <th>Загрузка...</th>
+                    <th>Загрузка...</th>
+                    <th>Загрузка...</th>
+                    <th>Загрузка...</th>
+                    <th>Загрузка...</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="jobList"></div>
+    </div>
+    <script src="script_job.js"></script>
+</body>
+</html>

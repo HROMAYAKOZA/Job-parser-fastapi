@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .stat {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px;
+            margin: 20px;
+            width: 100%;
+        }
+        .home-link {
+            font-size: 54px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="home-link">
+        <a href="/">Home</a>
+    </div></div>
+    <div class="container">
+        <h1>Статистика</h1>
+        <div id="jobs" class="stat">Вакансий: LOADING</div>
+        <div id="resums" class="stat">Резюме: LOADING</div>
+        <div id="summ" class="stat">Всего: LOADING</div>
+        <button onclick="fetchStatistics()">Refresh</button>
+    </div>
+    <script src="script_stat.js"></script>
+</body>
+</html>
