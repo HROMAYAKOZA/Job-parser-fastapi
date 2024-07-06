@@ -14,9 +14,6 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages', 'index.html'));
 });
-app.get('/favicon.ico', (req, res) => {
-  res.sendFile(path.join(__dirname, 'favicon.ico'));
-});
 
 app.use(express.static(path.join(__dirname, "pages")));
 
