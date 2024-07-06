@@ -18,7 +18,7 @@ app.get('/favicon.ico', (req, res) => {
   res.sendFile(path.join(__dirname, 'favicon.ico'));
 });
 
-app.use(express.static(path.join(__dirname,"pages")));
+app.use(express.static(path.join(__dirname, "pages")));
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://${SERV_IP}:${PORT}`);
